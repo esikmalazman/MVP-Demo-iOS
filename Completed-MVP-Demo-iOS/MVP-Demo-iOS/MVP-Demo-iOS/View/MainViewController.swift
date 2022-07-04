@@ -10,10 +10,11 @@ import UIKit
 final class MainViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     //MARK: - Variables
-    private let presenter = MainPresenter()
-    private var leagueData = [League]()
+    var presenter : MainPresenter = MainPresenter()
+    var leagueData = [League]()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ final class MainViewController: UIViewController {
 extension MainViewController : MainPresenterDelegate {
     
     func presentListOfLegue(_ MainVCPresenter: MainPresenter, data: [League]) {
-        DispatchQueue.main.async { [weak self] in
+        guaranteeMainThread { [weak self] in
             self?.leagueData = data
             self?.tableView?.reloadData()
             self?.removeSpinner()
