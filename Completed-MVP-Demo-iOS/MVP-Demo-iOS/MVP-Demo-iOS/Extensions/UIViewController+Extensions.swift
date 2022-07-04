@@ -7,7 +7,7 @@
 
 import UIKit
 
-private var spinnerView : UIView?
+ private(set) var spinnerView : UIView?
 
 extension UIViewController {
     
@@ -25,11 +25,21 @@ extension UIViewController {
     }
     
     func removeSpinner() {
-        guard let spinnerView = spinnerView else {
-            return
+        /// Make the dispatch weak to remove retain cycle in VC and make test pass
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            spinnerView?.removeFromSuperview()
+            spinnerView = nil
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            spinnerView.removeFromSuperview()
+    }
+    
+    /// Wrapper method to determine if work already in Main Thread active immediately otherwise ask it to run on main queue.
+    /// When in production task run in bg task it will dispatch into Main Queue, allow the test to pass since it run in Main Thread.
+    /// - https://www.youtube.com/watch?v=jH7Zfi7TQt8
+    func guaranteeMainThread(_ work : @escaping ()-> Void) {
+        if Thread.isMainThread {
+            work()
+        } else {
+            DispatchQueue.main.async(execute: work)
         }
     }
 }
