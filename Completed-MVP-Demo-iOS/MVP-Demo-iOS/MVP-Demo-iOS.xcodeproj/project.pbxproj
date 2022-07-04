@@ -19,6 +19,8 @@
 		7F10768E277563D00061691C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F10768D277563D00061691C /* UIViewController+Extensions.swift */; };
 		7F9E84C427756BD000D1CFB8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7F9E84C327756BD000D1CFB8 /* README.md */; };
 		7FEEBF73287191B9002639DD /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEEBF72287191B9002639DD /* MainViewControllerTests.swift */; };
+		7FF46E0B28725E4900694591 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF46E0A28725E4900694591 /* TestHelpers.swift */; };
+		7FF46E0D2872689500694591 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF46E0C2872689500694591 /* MainPresenterSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7F9E84C327756BD000D1CFB8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FEEBF69287191A4002639DD /* MVP-Demo-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVP-Demo-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEEBF72287191B9002639DD /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
+		7FF46E0A28725E4900694591 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		7FF46E0C2872689500694591 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				7FEEBF72287191B9002639DD /* MainViewControllerTests.swift */,
+				7FF46E0A28725E4900694591 /* TestHelpers.swift */,
+				7FF46E0C2872689500694591 /* MainPresenterSpy.swift */,
 			);
 			path = "MVP-Demo-iOSTests";
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FEEBF73287191B9002639DD /* MainViewControllerTests.swift in Sources */,
+				7FF46E0D2872689500694591 /* MainPresenterSpy.swift in Sources */,
+				7FF46E0B28725E4900694591 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
