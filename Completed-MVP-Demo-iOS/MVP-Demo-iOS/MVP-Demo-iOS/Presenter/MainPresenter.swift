@@ -12,9 +12,9 @@ protocol MainPresenterDelegate : AnyObject {
     func presentActionWhenRefresh(_ MainVCPresenter : MainPresenter)
 }
 
-final class MainPresenter {
+ class MainPresenter {
     
-    weak private var delegate : MainPresenterDelegate?
+    weak var delegate : MainPresenterDelegate?
     private let networkManager = NetworkManager()
     
     func setViewDelegate(delegate : MainPresenterDelegate) {

@@ -6,3 +6,22 @@
 //
 
 import Foundation
+@testable import MVP_Demo_iOS
+
+
+class MainPresenterSpy : MainPresenter {
+    
+    override func setViewDelegate(delegate: MainPresenterDelegate) {
+        
+    }
+    
+    override func getLeagueList() {
+        
+    }
+    
+    override func didRefreshView() {
+        
+    }
+    
+    
+}
